@@ -18,4 +18,56 @@
     >
     <mat-radio-button value="premium">Premium</mat-radio-button>
   </mat-radio-group>
+
+  <mat-form-field appearance="fill">
+    <mat-select formControlName="category" placeholder="Select category">
+      <mat-option>None</mat-option>
+
+      <mat-optgroup label="Beginners">
+        <mat-option value="newweb">New to Web</mat-option>
+        <mat-option value="newjs">New to Js</mat-option>
+      </mat-optgroup>
+
+      <mat-option value="beginners">Beginners</mat-option>
+      <mat-option value="intermediante">Intermediante</mat-option>
+      <mat-option value="advanced">Advanced</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <input
+      matInput
+      formControlName="releasedAt"
+      placeholder="Release Date"
+      [matDatepicker]="releasedAt"
+    />
+
+    <mat-datepicker-toggle matSuffix [for]="releasedAt">
+    </mat-datepicker-toggle>
+
+    <mat-datepicker #releasedAt [dateClass]="dateClass"></mat-datepicker>
+  </mat-form-field>
+
+  <mat-checkbox formControlName="downloadsAllowed" color="primary">
+    Downloads Allowed</mat-checkbox
+  >
+
+  <mat-checkbox [disabled]="true" color="primary">
+    Downloads Allowed</mat-checkbox
+  >
+
+  <mat-checkbox [indeterminate]="true" color="primary">
+    Downloads Allowed</mat-checkbox
+  >
+
+  <mat-form-field appearance="outline">
+    <textarea
+      matInput
+      formControlName="longDescription"
+      placeholder="Long Description"
+      cdkTextareaAutosize
+      [cdkAutosizeMinRows]="2"
+      [cdkAutosizeMaxRows]="4"
+    ></textarea>
+  </mat-form-field>
 </div>

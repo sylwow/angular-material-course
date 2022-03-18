@@ -2,7 +2,15 @@
   <div class="header">
     <h2 class="title">All Courses</h2>
 
-    <button mat-mini-fab routerLink="/add-new-course">
+    <button
+      mat-mini-fab
+      routerLink="/add-new-course"
+      matTooltip="Create Course"
+      matTooltipPosition="right"
+      matTooltipShowDelay="1000"
+      matTooltipHideDelay="2000"
+      [matTooltipDisabled]="false"
+    >
       <mat-icon class="add-course-btn">add</mat-icon>
     </button>
   </div>
