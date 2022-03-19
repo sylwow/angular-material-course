@@ -12,12 +12,13 @@ export function searchLessons(req: Request, res: Response) {
   const queryParams = req.query;
 
   const courseId = +queryParams.courseId,
-    filter = queryParams.filter.toString() || '',
-    sortOrder = queryParams.sortOrder.toString(),
+    filter = queryParams.filter?.toString() || '',
+    sortOrder = queryParams.sortOrder?.toString(),
     pageNumber = +queryParams.pageNumber || 0,
     pageSize = +queryParams.pageSize,
-    sortColumn = queryParams.sortColumn.toString() ?? "seqNo";
+    sortColumn = queryParams.sortColumn?.toString() ?? "seqNo";
 
+  console.log(courseId, filter, sortColumn, sortOrder, pageNumber, pageSize);
   let lessons = Object.values(LESSONS)
     .filter(lesson => lesson.courseId == courseId)
     .sort((l1, l2) => {

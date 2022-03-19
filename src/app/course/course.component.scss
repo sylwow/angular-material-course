@@ -55,6 +55,14 @@ mat-paginator {
 
 .mat-column-seqNo {
   width: 32px;
+  padding-left: 20px;
+  border-right: 1px solid black;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-select {
+  width: 32px;
   border-right: 1px solid black;
   padding-right: 24px;
   text-align: center;
@@ -67,4 +75,13 @@ mat-paginator {
 
 .mat-column-duration {
   font-style: italic;
+}
+
+.collapsed-detail {
+  display: none;
+}
+
+.scrolling-container {
+  max-height: 250px;
+  overflow: auto;
 }
