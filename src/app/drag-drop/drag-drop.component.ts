@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import {Lesson} from '../model/lesson';
+import { Component } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Lesson } from '../model/lesson';
 
 
 @Component({
@@ -90,4 +90,24 @@ export class DragDropComponent {
     }
   ];
 
+  done: Lesson[] = []
+
+  dropMultiList(event: CdkDragDrop<Lesson[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
+
+  drop(event: CdkDragDrop<Lesson[]>) {
+
+    moveItemInArray(this.lessons, event.previousIndex, event.currentIndex);
+
+  }
 }
