@@ -45,7 +45,11 @@ export function openEditCourseDialog(dialog: MatDialog, course: Course) {
   const config = new MatDialogConfig();
   config.disableClose = true;
   config.autoFocus = true;
+
   config.data = { ...course };
+
+  config.panelClass = 'modal-pannel';
+  config.backdropClass = 'backdrop-modal-pannel'
 
   return dialog.open(CourseDialogComponent, config).afterClosed();
 }

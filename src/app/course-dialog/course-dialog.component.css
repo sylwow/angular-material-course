@@ -1,13 +1,12 @@
-
 .edit-course-form {
   min-width: 300px;
 }
 
 .mat-form-field {
-    display: block;
+  display: block;
 }
 
 textarea {
-    height: 100px;
-    resize: vertical;
+  height: 100px;
+  resize: vertical;
 }
