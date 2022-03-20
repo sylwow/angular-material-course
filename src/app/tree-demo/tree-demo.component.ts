@@ -74,9 +74,7 @@ export class TreeDemoComponent implements OnInit {
     node => node.expandable);
 
   treeFlatener = new MatTreeFlattener(
-    (node: CourseNode, level: number): CourseFlatNode => {
-      return { name: node.name, expandable: node?.children?.length > 0, level };
-    },
+    (node: CourseNode, level: number): CourseFlatNode => ({ name: node.name, expandable: node?.children?.length > 0, level }),
     node => node.level,
     node => node.expandable,
     node => node.children
